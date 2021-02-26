@@ -1,0 +1,45 @@
+<div align="center">
+  <h1>{{ meta.title }}</h1>
+  <img alt="screenshot" src="https://raw.githubusercontent.com/{{ meta.repository.owner }}/{{ meta.repository.name }}/master/media/screenshot.png">
+  <br>
+  <br>
+  <p>{{ description }}</p>
+  <a href="{{ meta.releases.url }}/latest">
+    <img alt="Version {{ version }}" src="https://img.shields.io/badge/version-{{ version }}-red.svg?cacheSeconds=2592000&style=flat-square" />
+  </a>
+  <a href="{{ meta.license.url }}" target="\_blank">
+    <img alt="Licensed under the {{ meta.license.name }}" src="https://img.shields.io/github/license/{{ meta.repository.owner }}/{{ meta.repository.name }}?style=flat-square" />
+  <a href=https://buymeacoffee.com/paysonwallach>
+    <img src=https://img.shields.io/badge/donate-Buy%20me%20a%20coffe-yellow?style=flat-square>
+  </a>
+  <br>
+  <br>
+</div>
+
+## Installation
+
+Clone this repository or download the [latest release]({{ meta.releases.url }}/latest).
+
+```shell
+git clone {{ repository.url }}
+```
+
+Build and install with `ninja`.
+
+```shell
+ninja -C build install
+```
+
+Log out and log back in, or restart `gala` using the following:
+
+```shell
+gala -d :0 --replace
+```
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change. By participating in this project, you agree to abide by the terms of the [Code of Conduct]({{ meta.codeOfConduct.url }}).
+
+## License
+
+[{{ meta.title }}]({{ repository.url }}) is licensed under the [{{ meta.license.name }}]({{ meta.license.url }}).

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/pantheon/desktop/gala/plugins/switch/" id="org.pantheon.desktop.gala.plugins.switch">
+    <key type="b" name="all-workspaces">
+      <default>false</default>
+      <summary>Show windows from all workspaces</summary>
+      <description>If enabled, windows from all workspaces will be displayed in the alt-tab-switcher. Otherwise, only windows from the current workspace will be shown.</description>
+    </key>
+    <key type="b" name="animate">
+      <default>true</default>
+      <summary>Animate the open and start of the switcher</summary>
+      <description>Fade the switcher in and out and animate its depth when it is opened and closed.</description>
+    </key>
+    <key type="b" name="always-on-primary-monitor">
+      <default>false</default>
+      <summary>Always place the switcher on the primary monitor</summary>
+      <description>When enabled the switcher will always appear on the primary monitor. Otherwise it will be placed on the current monitor, that is, the monitor with the cursor on it.</description>
+    </key>
+    <key type="i" name="icon-size">
+      <range min="16" max="1024"/>
+      <default>256</default>
+      <summary>The size of the icons</summary>
+      <description>The size at which the icons in the switcher should be displayed.</description>
+    </key>
+    <key type="s" name="window-switcher-indicator-background-color">
+      <default>"rgba(85,158,217,0.59)"</default>
+      <summary>The background color of the window switcher's indicator</summary>
+      <description>The background color of the window switcher's indicator, encoded in RGBA. The first three values are either integers in the range 0 to 255, or percentage values in the range 0% to 100%. The final value is a floating point value in the range 0 to 1.</description>
+    </key>
+  </schema>
+</schemalist>

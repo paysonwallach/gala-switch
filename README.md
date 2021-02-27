@@ -3,7 +3,7 @@
   <img alt="screenshot" src="https://raw.githubusercontent.com/paysonwallach/gala-switch/master/media/screenshot.png">
   <br>
   <br>
-  <p>An alternative application switcher for Gala.</p>
+  <p>An alternative application and window switcher for Gala.</p>
   <a href="https://github.com/paysonwallach/gala-switch/releases/latest">
     <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-red.svg?cacheSeconds=2592000&style=flat-square" />
   </a>

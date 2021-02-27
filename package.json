@@ -1,6 +1,6 @@
 {
   "name": "switch",
-  "description": "An alternative application switcher for Gala.",
+  "description": "An alternative application and window switcher for Gala.",
   "license": "GPL-3.0",
   "author": "Payson Wallach <payson@paysonwallach.com>",
   "homepage": "https://github.com/paysonwallach/gala-switch#readme",

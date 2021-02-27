@@ -24,6 +24,12 @@ Clone this repository or download the [latest release](https://github.com/payson
 git clone https://github.com/paysonwallach/gala-switch
 ```
 
+Create and configure the `build` directory:
+
+```shell
+meson --prefix=/usr build
+```
+
 Build and install with `ninja`.
 
 ```shell

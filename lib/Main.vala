@@ -175,7 +175,11 @@ namespace Switch {
             }
 
             if (!opened)
+#if HAS_MUTTER330
                 on_open (display, workspace);
+#else
+                on_open (display, screen, workspace);
+#endif
 
             var binding_name = binding.get_name ();
             var backward = binding_name.has_suffix ("-backward");

@@ -505,8 +505,8 @@ namespace Switch {
             var windows = display.get_tab_list (Meta.TabList.NORMAL, workspace);
 #else
             var screen = wm.get_screen ();
-            var workspace = settings.all_workspaces ? null : wm.get_screen ().get_active_workspace ();
-            var windows = wm.get_screen ().get_display ().get_tab_list (Meta.TabList.NORMAL, workspace);
+            var workspace = settings.all_workspaces ? null : screen.get_active_workspace ();
+            var windows = screen.get_display ().get_tab_list (Meta.TabList.NORMAL, workspace);
 #endif
             foreach (var focused_window in last_focused_window.@get (window_class)) {
                 foreach (var meta_window in windows) {

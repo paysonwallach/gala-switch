@@ -141,13 +141,7 @@ namespace Switch {
         private uint modifier_mask = 0U;
         private bool opened = false;
 
-#if HAS_MUTTER330
         public abstract void on_open (Meta.Display display, Meta.Workspace workspace);
-
-#else
-        public abstract void on_open (Meta.Display display, Meta.Screen screen, Meta.Workspace workspace);
-
-#endif
 
         public abstract Meta.Window? on_close ();
 
@@ -175,11 +169,7 @@ namespace Switch {
             }
 
             if (!opened)
-#if HAS_MUTTER330
                 on_open (display, workspace);
-#else
-                on_open (display, screen, workspace);
-#endif
 
             var binding_name = binding.get_name ();
             var backward = binding_name.has_suffix ("-backward");
@@ -463,15 +453,9 @@ namespace Switch {
             wrapper.add_child (container);
         }
 
-#if HAS_MUTTER330
         public override void on_open (Meta.Display display, Meta.Workspace workspace) {
             var windows = display.get_tab_list (Meta.TabList.NORMAL, workspace);
             var current_window = display.get_tab_current (Meta.TabList.NORMAL, workspace);
-#else
-        public override void on_open (Meta.Display display, Meta.Screen screen, Meta.Workspace workspace) {
-            var windows = display.get_tab_list (Meta.TabList.NORMAL, screen, workspace);
-            var current_window = display.get_tab_current (Meta.TabList.NORMAL, screen, workspace);
-#endif
 
             container.width = -1;
             container.destroy_all_children ();
@@ -522,7 +506,7 @@ namespace Switch {
 #else
             var screen = wm.get_screen ();
             var workspace = settings.all_workspaces ? null : wm.get_screen ().get_active_workspace ();
-            var windows = wm.get_display ().get_tab_list (Meta.TabList.NORMAL, screen, workspace);
+            var windows = wm.get_screen ().get_display ().get_tab_list (Meta.TabList.NORMAL, workspace);
 #endif
             foreach (var focused_window in last_focused_window.@get (window_class)) {
                 foreach (var meta_window in windows) {
@@ -588,15 +572,9 @@ namespace Switch {
             wrapper.add_child (container);
         }
 
-#if HAS_MUTTER330
         public override void on_open (Meta.Display display, Meta.Workspace workspace) {
             var windows = display.get_tab_list (Meta.TabList.NORMAL, workspace);
             var current_window = display.get_tab_current (Meta.TabList.NORMAL, workspace);
-#else
-        public override void on_open (Meta.Display display, Meta.Screen screen, Meta.Workspace workspace) {
-            var windows = display.get_tab_list (TabList.NORMAL, screen, workspace);
-            var current_window = display.get_tab_current (TabList.NORMAL, screen, workspace);
-#endif
             var current_window_wm_class = current_window.get_wm_class ();
             var focus_order = last_focused_window.@get (current_window_wm_class);
             unowned List<Meta.WindowActor> window_actors = display.get_window_actors ();

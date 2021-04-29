@@ -13,11 +13,6 @@ libdir = join_paths(prefix, get_option('libdir'))
 plugindir = join_paths(get_option('prefix'), get_option('libdir'), 'gala', 'plugins')
 vapidir = join_paths(meson.source_root(), 'vapi')
 
-add_project_arguments(
-  '--vapidir=' + vapidir,
-  language: 'vala',
-)
-
 gala_dep = dependency('gala')
 gdk_dep = dependency('gdk-3.0')
 gee_dep = dependency('gee-0.8')
@@ -106,6 +101,11 @@ mutter_typelib_dir = libmutter_dep.get_pkgconfig_variable('typelibdir')
 add_project_arguments(
   ['-DG_LOG_DOMAIN="@0@"'.format(meson.project_name())],
   language:'c'
+)
+
+add_project_arguments(
+  ['--vapidir', vapidir],
+  language: 'vala',
 )
 
 switch_sources = files(

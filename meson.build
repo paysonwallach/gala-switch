@@ -103,6 +103,11 @@ endif
 
 mutter_typelib_dir = libmutter_dep.get_pkgconfig_variable('typelibdir')
 
+add_project_arguments(
+  ['-DG_LOG_DOMAIN="@0@"'.format(meson.project_name())],
+  language:'c'
+)
+
 switch_sources = files(
   'lib/Main.vala'
 )

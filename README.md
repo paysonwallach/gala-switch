@@ -16,6 +16,11 @@
   <br>
 </div>
 
+## Prerequisites
+```shell
+sudo apt-get install meson libvala-0.48-dev libgala-dev libgala0 libgee-0.8-dev libgranite-dev 
+```
+
 ## Installation
 
 Clone this repository or download the [latest release](https://github.com/paysonwallach/gala-switch/releases/latest).
